@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Edit patient</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Edit patient</h1>
+        <br />
+        <form action="#" th:action="@{'/healthmgmt/patient/save'}" th:object="${patient}"
+            method="post">
+ 
+            <table border="0" cellpadding="10">
+                <tr>             
+                    <td>patient ID:</td>
+                    <td>
+                        <input type="text" th:field="*{id}" readonly="readonly" />
+                    </td>
+                </tr>        
+                <tr>             
+                    <td>patient Name:</td>
+                    <td>
+                        <input type="text" th:field="*{name}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>age:</td>
+                    <td><input type="text" th:field="*{age}" /></td>
+                </tr>
+                <tr>
+                    <td>mobile</td>
+                    <td><input type="text" th:field="*{mobile}" /></td>
+                </tr>
+                <tr>
+                    <td>address:</td>
+                    <td><input type="text" th:field="*{address}" /></td>
+                </tr>
+                <tr>
+                    <td>quarantine_duration:</td>
+                    <td><input type="text" th:field="*{quarantine_duration}" /></td>
+                </tr>   
+                <tr>
+                    <td>covid patient:</td>
+                    <td><input type="text" th:field="*{quarantine_duration}" /></td>
+                </tr>                          
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

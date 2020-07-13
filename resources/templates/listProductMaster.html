@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>ProductMaster Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>ProductMaster List</h1>
+    <a href="/healthmgmt/Products/productmasternew">Create New ProductMaster</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Item Code</th>
+                <th>Item Description</th>
+                <th>Item Type</th>
+                <th>Item Unit</th>
+                <th>Balance Quantity</th>
+                <th>Updated On</th>
+                <th>Updated By</th>
+              
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="productmaster: ${listProducts}">
+                <td th:text="${productmaster.itemId}">Item ID</td>
+                <td th:text="${productmaster.itemCode}">Item Code</td>
+                <td th:text="${productmaster.itemDesc}">Item Description</td>
+                <td th:text="${productmaster.itemType}">Item Type</td>
+                <td th:text="${productmaster.itemUnit}">Item Unit</td>
+                <td th:text="${productmaster.balanceQty}">Balance Quantity</td>
+                <td th:text="${productmaster.updateDate}">Updated On</td>
+                <td th:text="${productmaster.updateBy}">Updated By</td>
+                <td>
+                     <a th:href="@{'editproductmaster/' + ${productmaster.itemId}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'deleteproductmaste/' + ${productmaster.itemId}}">Delete</a>
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>   
+</body>
+</html>
