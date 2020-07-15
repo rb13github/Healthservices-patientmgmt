@@ -3,24 +3,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:th="http://www.thymeleaf.org">
 
-<head>
-<title>Healthmgmt Web Application</title>
+<head th:replace="fragments/header :: header">
+<!-- <div th:replace="fragments/header :: header">...</div> -->
 </head>
 
 <body>
     
-   
-            
-<div align="center">
-<h1>Login </h1>
-<div th:if="${errorMessage}">
-  <p>Invalid credential</p>
-</div>
-<div th:unless="${errorMessage}">
-  <p>Welcome Guest</p>
-</div>
-<br/><br/>
+     <!-- Navigator  -->
+<div th:replace="fragments/menu :: navigator">...</div>
+   <!-- Page Content -->
+  <div class="container mt-5">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">Healthcare Resources Management </h1>
+      <p class="lead">Hello Guest</p>
+      
+    </header>
     
+    <!-- Page Features -->
+    <div class="row">
+
+      <div class="col-lg-12 col-md-12 mb-4">
+        <div class="card h-100">
+          
+          <div class="card-body">
+            <h4 class="card-title">Login</h4>
+            
+			  
+            
+   
             
   <!--    <font color="red">${errorMessage}</font>-->
     <form action="#" th:action="@{'/healthmgmt/login'}" method="post">
@@ -35,9 +47,32 @@
 							placeholder="Password" />
 					</div>
         
-        <input type="submit" />
+         <button type="submit" class="btn btn-primary">LOGIN</button>
     </form>
 </div>  
+
+     </div>
+          
+        </div>
+      </div>
+
+      
+      
+
+      
+
+    </div>
+    <!-- /.row -->
+ 
+  <!-- /.container -->
+ <!-- Footer -->
+<div th:replace="fragments/footer :: footer">...</div>
+
+  <!-- Bootstrap core JavaScript -->
+
+  <script type="text/javascript" th:src="@{/js/min.js}"></script>
+
+  
 </body>
 
 </html>

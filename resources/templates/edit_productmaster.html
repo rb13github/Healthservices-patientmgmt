@@ -1,52 +1,74 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8" />
-<title>Edit Product</title>
+
+<head th:replace="fragments/header :: header">
+<!-- <div th:replace="fragments/header :: header">...</div> -->
 </head>
+
 <body>
+    
+     <!-- Navigator  -->
+<div th:replace="fragments/menu :: navigator">...</div>
+   <!-- Page Content -->
+  <div class="container mt-5">
+
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">Healthcare Resources Management</h1>
+      <p class="lead">Hello Guest</p>
+      
+    </header>
+    
+    <!-- Page Features -->
+    <div class="row">
+
+      <div class="col-lg-12 col-md-12 mb-4">
+        <div class="card h-100">
+          
+          <div class="card-body">
+            <h4 class="card-title">Edit Product Master</h4>
+            
+			  
+            
     <div align="center">
-        <h1>Edit Product</h1>
         
-  <div th:if="${user}">
- <a th:text="${user.username}">Welcome:</a>
- </div>
         <br />
         <form action="#" th:action="@{'/healthmgmt/Products/saveproductmaster'}" th:object="${productmaster}"
             method="post">
  
-            <table border="0" cellpadding="10">
+            <table class="table" >
                      
                  <tr>
-                    <td>Item Id:</td>
-                    <td><input type="text" th:field="*{itemId}" readonly="readonly" /></td>
+                    <td  class="mt-2">Item Id:</td>
+                    <td><input type="text" class="form-control"  th:field="*{itemId}" readonly="readonly" /></td>
                 </tr>
                 <tr>
-                    <td>Item Code:</td>
-                    <td><input type="text" th:field="*{itemCode}" /></td>
+                    <td  class="mt-2">Item Code:</td>
+                    <td><input type="text" class="form-control"  th:field="*{itemCode}" /></td>
                 </tr>
                 <tr>
-                    <td>Item Descr:</td>
-                    <td><input type="text" th:field="*{itemDesc}" /></td>
+                    <td  class="mt-2">Item Descr:</td>
+                    <td><input type="text" class="form-control"  th:field="*{itemDesc}" /></td>
                 </tr>
                 <tr>
-                    <td>Item Type:</td>
-                    <td><input type="text" th:field="*{itemType}" /></td>
+                    <td  class="mt-2">Item Type:</td>
+                    <td><input type="text" class="form-control"  th:field="*{itemType}" /></td>
                 </tr>   
                 <tr>
-                    <td>BalanceQty:</td>
-                    <td><input type="text" th:field="*{balanceQty}" /></td>
+                    <td  class="mt-2">BalanceQty:</td>
+                    <td><input type="text" class="form-control"  th:field="*{balanceQty}" /></td>
                 </tr>  
                 
                 <tr>
-                    <td>ItemUnit:</td>
-                    <td><input type="text" th:field="*{itemUnit}" /></td>
+                    <td  class="mt-2">ItemUnit:</td>
+                    <td><input type="text" class="form-control"  th:field="*{itemUnit}" /></td>
                 </tr> 
                 
                 <tr>
-                    <td>UpdateBy:</td>
-                    <td><input type="text" th:field="*{updateBy}" /></td>
+                    <td  class="mt-2">UpdateBy:</td>
+                    <td><input type="text" class="form-control"  th:field="*{updateBy}" /></td>
                  </tr>       
                   <!--   <tr>
                     <td>UpdateDate:</td>
@@ -55,10 +77,33 @@
                           -->           
                 <tr>
                 <tr>
-                    <td colspan="2"><button type="submit">Save</button> </td>
+                    <td colspan="2"><button class="btn btn-primary"  type="submit">Save</button> </td>
                 </tr>
             </table>
         </form>
+   </div>  
+
+     </div>
+          
+        </div>
+      </div>
+
+      
+      
+
+      
+
     </div>
+    <!-- /.row -->
+ </div>
+  <!-- /.container -->
+ <!-- Footer -->
+<div th:replace="fragments/footer :: footer">...</div>
+  <!-- Bootstrap core JavaScript -->
+
+  <script type="text/javascript" th:src="@{/js/min.js}"></script>
+
+  
 </body>
+
 </html>

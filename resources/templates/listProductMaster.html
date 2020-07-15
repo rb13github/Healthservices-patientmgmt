@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8"/>
-<title>ProductMaster Manager</title>
+    xmlns:th="http://www.thymeleaf.org">
+    
+<head th:replace="fragments/header :: header">
+<!-- <div th:replace="fragments/header :: header">...</div> -->
 </head>
+
 <body>
+    
+     <!-- Navigator  -->
+<div th:replace="fragments/menu :: navigator">...</div>
+   <!-- Page Content -->
+  <div class="container mt-5">
+
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">Healthcare Resources Management</h1>
+      <p class="lead">Hello Guest</p>
+      
+    </header>
+    
 <div align="center">
-    <h1>ProductMaster List</h1>
+  
     <a href="/healthmgmt/Products/productmasternew">Create New ProductMaster</a>
     <br/><br/>
-    <table border="1" cellpadding="10">
-        <thead>
+    
+    <!-- Jumbotron Header --><!-- Page Features -->
+    <div class="row">
+ 		<h3 class="card-title ml-3">ProductMaster List</h3>
+      <div class="col-lg-12 col-md-12 mb-4">
+        <div class="card h-100">
+         
+          <div class="card-body">
+    <table class="table">
+       <thead class="thead-light">
             <tr>
                 <th>Item ID</th>
                 <th>Item Code</th>
@@ -36,14 +59,42 @@
                 <td th:text="${productmaster.updateDate}">Updated On</td>
                 <td th:text="${productmaster.updateBy}">Updated By</td>
                 <td>
+                
                      <a th:href="@{'editproductmaster/' + ${productmaster.itemId}}">Edit</a>
                     &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'deleteproductmaste/' + ${productmaster.itemId}}">Delete</a>
+                    <a th:href="@{'deleteproductmaster/' + ${productmaster.itemId}}">Delete</a>
                 </td>
                 
             </tr>
         </tbody>
     </table>
 </div>   
+
+</div>
+
+
+</div>
+          
+        </div>
+      </div>
+
+      
+      
+
+      
+
+    </div>
+    <!-- /.row -->
+ 
+ <!-- /.container -->
+ <!-- Footer -->
+<div th:replace="fragments/footer :: footer">...</div>
+
+  <!-- Bootstrap core JavaScript -->
+
+  <script type="text/javascript" th:src="@{/js/min.js}"></script>
+
+  
 </body>
+
 </html>
