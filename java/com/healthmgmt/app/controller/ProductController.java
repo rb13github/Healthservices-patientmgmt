@@ -130,8 +130,8 @@ public class ProductController {
     }
     
     @RequestMapping("/deleteproductmaster/{id}")
-    public String deleteProductmaster(@PathVariable(name = "itemId") int id) {
-    	productServicev1.delete(id);
+    public String deleteProductmaster(@PathVariable(name = "id") String id) {
+    	productServicev1.delete(Integer.parseInt(id));
         return "redirect:/healthmgmt/Products/productmasterlist";       
     }
 }
